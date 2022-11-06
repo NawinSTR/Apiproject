@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+
+<div class="login-form">
+
+  <form [formGroup]="loginForm1" (ngSubmit)="onSubmit1()">
+
+
+  <!--<form  [formGroup]="registrationFormGroup" (ngSubmit)="onSubmit()"> this code is for login validation  -->
+
+    <h1>Login</h1>
+    <div class="content">
+      <div class="input-field">  
+
+        <input type="username" placeholder="Username" formControlName="name" > 
+
+        <span class="validation-error" *ngIf="(formSubmitted || registrationFormGroup.controls.name.touched) && registrationFormGroup.
+        controls.name.errors?.['required']">Name is required</span>
+      </div>
+
+      <div class="input-field">
+
+        <input type="password" placeholder="Password" formControlName="password" >
+
+        <span class="validation-error" *ngIf="(formSubmitted || registrationFormGroup.controls.password.touched)  && registrationFormGroup.controls.
+        password.errors?.['required']">Password is required</span>
+        <span class="validation-error" *ngIf="(formSubmitted || registrationFormGroup.controls.password.touched)  && registrationFormGroup.controls.
+        password.errors?.['pattern']">Please enter strong password(Should have Uppercase, lowercase, numbers & special characters</span>
+      </div>
+      <a routerLink="/" class="link">Forgot Your Password?</a>
+    </div>
+    <div class="action">
+      <button>Register</button>
+      <button>Login</button>
+    </div>
+  </form>
+
+</div>
+
+
+
+</body>
+</html>
